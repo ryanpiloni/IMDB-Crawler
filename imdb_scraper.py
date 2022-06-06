@@ -30,7 +30,7 @@ def get_movie_metadata(movie_id_list):
         assert year
 
         # This gets us further into the html parse, near the tag with the rating text
-        mpa_rating_outer_tag = results_soup.find('div', class_='sc-94726ce4-1 iNShGo')
+        mpa_rating_outer_tag = results_soup.find('div', class_='sc-94726ce4-3 eSKKHi') #This class data changes, is there anyway to avoid having to rely on this? v.v
         assert mpa_rating_outer_tag
 
         # Returns list containing all a tags (within reach)
@@ -41,7 +41,7 @@ def get_movie_metadata(movie_id_list):
         # Get movie length (use mpa_rating_outer_tag as start point)
         li_list = mpa_rating_outer_tag.find_all('li')
         assert li_list
-
+        
         movie_length = li_list[2].get_text()
         assert movie_length
 

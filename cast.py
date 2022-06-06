@@ -24,10 +24,10 @@ def get_cast_info(page_url):
     cast_tag_list = cast_tag_outer.find_all('tr')
     assert cast_tag_list
 
-    # Loop through first 15 tr tags
+    # Loop through first 10 tr tags
     count = 0
     for tr in cast_tag_list:
-        if count > 15:
+        if count > 10:
             break
         else:
             pass
